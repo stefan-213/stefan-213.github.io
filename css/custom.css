@@ -1,0 +1,50 @@
+/* 修改卡片透明度 */
+#recent-posts>.recent-post-item,
+.layout>div:not(.recent-posts)>div:not(:last-child) {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 为文章卡片添加背景图片 */
+#recent-posts>.recent-post-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* 为不同的文章卡片设置不同的背景图片 */
+#recent-posts>.recent-post-item:nth-child(3n+1)::before {
+    background-image: url('/img/card-bg1.jpg');
+}
+
+#recent-posts>.recent-post-item:nth-child(3n+2)::before {
+    background-image: url('/img/card-bg2.jpg');
+}
+
+#recent-posts>.recent-post-item:nth-child(3n+3)::before {
+    background-image: url('/img/card-bg3.jpg');
+}
+
+/* 修改文章卡片透明度 */
+#recent-posts>.recent-post-item>.recent-post-info>.article-title {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* 修改侧边栏卡片透明度 */
+#aside-content .card-widget {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
